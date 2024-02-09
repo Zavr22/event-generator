@@ -63,9 +63,9 @@ func addEventsToCalendar(srv *calendar.Service, calendarID string, events []*cal
 	for _, event := range events {
 		createdEvent, err := srv.Events.Insert(calendarID, event).Do()
 		if err != nil {
-			fmt.Printf("Не удалось добавить событие: %v\n", err)
+			fmt.Printf("error adding event: %v\n", err)
 		} else {
-			fmt.Printf("Событие добавлено: %s\n", createdEvent.HtmlLink)
+			fmt.Printf("Event added: %s\n", createdEvent.HtmlLink)
 		}
 	}
 }
